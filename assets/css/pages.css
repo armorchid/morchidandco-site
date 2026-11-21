@@ -110,3 +110,22 @@
 .consent-bar .btns{display:flex;flex-wrap:wrap;gap:10px}
 .consent-bar .btn{min-height:44px;padding:0 20px;font-size:.92rem;flex:1 1 140px}
 .cookie-link{background:none;border:0;padding:0;font:inherit;color:var(--on-navy);cursor:pointer;text-decoration:underline;text-underline-offset:4px}
+
+/* Always-visible WhatsApp and call buttons (all screen sizes) */
+.fab{display:none!important}
+.fab-group{position:fixed;z-index:45;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.fab-btn{display:inline-flex;align-items:center;gap:10px;height:54px;padding:0 22px 0 16px;border-radius:999px;text-decoration:none;font:600 .98rem/1 var(--f-body);box-shadow:0 14px 30px -12px rgba(10,33,49,.6);transition:transform .2s ease,box-shadow .2s ease}
+.fab-btn svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.fab-btn:hover{transform:translateY(-2px) scale(1.03);box-shadow:0 18px 34px -12px rgba(10,33,49,.7)}
+.fab-wa{position:relative;background:#1FAF5A;color:#fff}
+.fab-wa::before{content:"";position:absolute;inset:0;border-radius:inherit;border:2px solid #1FAF5A;animation:fabPing 2.8s ease-out infinite;pointer-events:none}
+.fab-wa svg{animation:fabWiggle 5s ease-in-out infinite;transform-origin:50% 60%}
+.fab-call{background:var(--navy);color:var(--on-navy);border:1px solid rgba(217,191,135,.4)}
+.fab-call svg{color:var(--gold-2)}
+@keyframes fabPing{0%{transform:scale(1);opacity:.7}80%,100%{transform:scale(1.35,1.6);opacity:0}}
+@keyframes fabWiggle{0%,86%,100%{transform:rotate(0)}89%{transform:rotate(-14deg)}92%{transform:rotate(12deg)}95%{transform:rotate(-8deg)}98%{transform:rotate(4deg)}}
+[dir="rtl"] .fab-group{right:auto;left:calc(18px + env(safe-area-inset-left,0px));align-items:flex-start}
+@media (max-width:720px){.fab-group{right:calc(14px + env(safe-area-inset-right,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));gap:8px}.fab-btn{height:50px;padding:0 18px 0 14px;font-size:.92rem}.foot-base .wrap{padding-bottom:calc(130px + env(safe-area-inset-bottom,0px))}}
+@media (prefers-reduced-motion:reduce){.fab-wa::before,.fab-wa svg{animation:none}}
+.consent-bar{bottom:150px}
+@media (min-width:721px){.consent-bar{bottom:24px;left:24px;right:auto;margin:0}}
