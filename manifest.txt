@@ -2,6 +2,7 @@ ar/fees/index.html
 ar/index.html
 ar/questions/index.html
 assets/css/pages.css
+assets/js/consent.js
 assets/js/pages.js
 fees/index.html
 fr/fees/index.html
