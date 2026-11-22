@@ -7,9 +7,9 @@
   if (!GA_ID && !GTM_ID) return;
   var lang = (document.documentElement.lang || 'en').slice(0,2);
   var T = {
-    en:{t:'Welcome! We\'d love to know which pages help you most, so we can keep making them better. Mind if we use a few analytics cookies?',a:'Happy to help',r:'Not today',p:'Privacy'},
-    fr:{t:'Bienvenue ! Nous aimerions savoir quelles pages vous aident le plus, pour continuer à les améliorer. Acceptez-vous quelques cookies de mesure ?',a:'Avec plaisir',r:'Pas aujourd\'hui',p:'Confidentialité'},
-    ar:{t:'أهلًا بك! يسعدنا أن نعرف أي الصفحات تفيدك أكثر لنواصل تحسينها. هل تسمح لنا ببعض ملفات تعريف الارتباط؟',a:'بكل سرور',r:'ليس الآن',p:'الخصوصية'}
+    en:{t:'Welcome! Mind if we use a few cookies to improve our site?',a:'Happy to help',r:'Not today',p:'Privacy'},
+    fr:{t:'Bienvenue ! Pouvons-nous utiliser quelques cookies pour améliorer notre site ?',a:'Avec plaisir',r:'Pas aujourd\'hui',p:'Confidentialité'},
+    ar:{t:'أهلًا بك! هل تسمح لنا ببعض ملفات تعريف الارتباط لتحسين موقعنا؟',a:'بكل سرور',r:'ليس الآن',p:'الخصوصية'}
   }[lang] || null;
   T = T || {t:'',a:'Accept',r:'Reject',p:'Privacy'};
   window.dataLayer = window.dataLayer || [];
