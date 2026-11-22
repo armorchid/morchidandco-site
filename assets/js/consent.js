@@ -2,7 +2,7 @@
 // Google Tag Manager container (set up in GTM to send data to Google Analytics 4). Leave both IDs empty to switch analytics off.
 (function(){
   var GTM_ID = 'GTM-MGMXBXBG';
-  var GA_ID = '';
+  var GA_ID = 'G-TGJBPERZV7';
   var KEY = 'mc_consent_v1';
   if (!GA_ID && !GTM_ID) return;
   var lang = (document.documentElement.lang || 'en').slice(0,2);
@@ -30,7 +30,7 @@
     // Count WhatsApp, phone and email clicks as enquiries
     document.addEventListener('click',function(e){var a=e.target.closest('a,button[type=submit]'); if(!a) return; var h=a.getAttribute('href')||'';
       var m = h.indexOf('wa.me')>-1?'whatsapp':h.indexOf('tel:')===0?'phone':h.indexOf('mailto:')===0?'email':(a.dataset&&a.dataset.via)?('form_'+a.dataset.via):'';
-      if(m) dataLayer.push({event:'generate_lead', lead_method:m, page_path:location.pathname});},true);
+      if(m) gtag('event','generate_lead',{method:m, page_path:location.pathname});},true);
   }
   function get(){ try{return localStorage.getItem(KEY);}catch(e){return null;} }
   function set(v){ try{localStorage.setItem(KEY,v);}catch(e){} }
