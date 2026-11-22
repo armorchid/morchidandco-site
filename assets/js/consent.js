@@ -7,9 +7,9 @@
   if (!GA_ID && !GTM_ID) return;
   var lang = (document.documentElement.lang || 'en').slice(0,2);
   var T = {
-    en:{t:'We would like to use Google Analytics cookies to understand how visitors use this site. We only set them if you agree.',a:'Accept',r:'Reject',p:'Privacy notice'},
-    fr:{t:'Nous aimerions utiliser les cookies Google Analytics pour comprendre l\'utilisation de ce site. Ils ne sont déposés qu\'avec votre accord.',a:'Accepter',r:'Refuser',p:'Confidentialité'},
-    ar:{t:'نود استخدام ملفات تعريف الارتباط من Google Analytics لفهم كيفية استخدام الموقع، ولن نضعها إلا بموافقتك.',a:'موافق',r:'رفض',p:'إشعار الخصوصية'}
+    en:{t:'Can we use a few analytics cookies to see which pages help people most?',a:'Yes, that\'s fine',r:'No thanks',p:'Privacy'},
+    fr:{t:'Pouvons-nous utiliser quelques cookies de mesure pour savoir quelles pages vous aident le plus ?',a:'Oui, d\'accord',r:'Non merci',p:'Confidentialité'},
+    ar:{t:'هل تسمح لنا ببعض ملفات تعريف الارتباط لنعرف أي الصفحات تفيد زوّارنا أكثر؟',a:'نعم، لا مانع',r:'لا، شكرًا',p:'الخصوصية'}
   }[lang] || null;
   T = T || {t:'',a:'Accept',r:'Reject',p:'Privacy'};
   window.dataLayer = window.dataLayer || [];

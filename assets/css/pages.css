@@ -129,3 +129,11 @@
 @media (prefers-reduced-motion:reduce){.fab-wa::before,.fab-wa svg{animation:none}}
 .consent-bar{bottom:150px}
 @media (min-width:721px){.consent-bar{bottom:24px;left:24px;right:auto;margin:0}}
+
+/* Softer, smaller cookie prompt */
+.consent-bar{max-width:420px;padding:16px 18px;gap:10px;font-size:.9rem;border-radius:14px}
+.consent-bar p{color:var(--ink)}
+.consent-bar a{color:var(--ink-3);font-size:.85rem;text-underline-offset:3px}
+.consent-bar .btn{min-height:40px;font-size:.88rem;padding:0 16px}
+.consent-bar .btn-line{border-color:var(--line);color:var(--ink-2)}
+.consent-bar .btn-line:hover{background:var(--paper);color:var(--ink)}
