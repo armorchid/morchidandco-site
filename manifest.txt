@@ -1,3 +1,5 @@
+404.html
+about/index.html
 ar/fees/index.html
 ar/index.html
 ar/questions/index.html
@@ -31,4 +33,11 @@ news/summer-2026-rule-changes-hc-259/index.html
 news/visa-stickers-withdrawn-evisas-july-2026/index.html
 questions/index.html
 robots.txt
+services/arabic-french-speaking-immigration-adviser/index.html
+services/british-citizenship/index.html
+services/ilr-earned-settlement/index.html
+services/sponsor-licence/index.html
+services/spouse-visa/index.html
+services/visa-refusal-appeals/index.html
+services/visit-visa/index.html
 sitemap.xml

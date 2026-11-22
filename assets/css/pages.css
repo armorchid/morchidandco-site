@@ -137,3 +137,7 @@
 .consent-bar .btn{min-height:40px;font-size:.88rem;padding:0 16px}
 .consent-bar .btn-line{border-color:var(--line);color:var(--ink-2)}
 .consent-bar .btn-line:hover{background:var(--paper);color:var(--ink)}
+
+.foot-grid{grid-template-columns:minmax(0,1.2fr) minmax(0,.6fr) minmax(0,.8fr) minmax(0,1fr)}
+@media (max-width:1000px){.foot-grid{grid-template-columns:1fr 1fr}.foot-brand{grid-column:1/-1}}
+@media (max-width:560px){.foot-grid{grid-template-columns:1fr}}
