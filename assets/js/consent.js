@@ -1,9 +1,10 @@
 // Morchid & Co: Google Analytics 4 with consent (UK GDPR / PECR). Analytics only loads after the visitor clicks "Accept".
-// To switch analytics on, put your GA4 Measurement ID below, e.g. 'G-ABC123XYZ'. Leave empty to keep analytics off.
+// Google Tag Manager container (set up in GTM to send data to Google Analytics 4). Leave both IDs empty to switch analytics off.
 (function(){
+  var GTM_ID = 'GTM-MGMXBXBG';
   var GA_ID = '';
   var KEY = 'mc_consent_v1';
-  if (!GA_ID) return;
+  if (!GA_ID && !GTM_ID) return;
   var lang = (document.documentElement.lang || 'en').slice(0,2);
   var T = {
     en:{t:'We would like to use Google Analytics cookies to understand how visitors use this site. We only set them if you agree.',a:'Accept',r:'Reject',p:'Privacy notice'},
@@ -18,12 +19,18 @@
   function load(){
     if (window.__gaLoaded) return; window.__gaLoaded = true;
     gtag('consent','update',{analytics_storage:'granted'});
-    var s=document.createElement('script'); s.async=true; s.src='https://www.googletagmanager.com/gtag/js?id='+GA_ID; document.head.appendChild(s);
-    gtag('js', new Date()); gtag('config', GA_ID, {anonymize_ip:true});
+    if (GTM_ID) {
+      dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+      var g=document.createElement('script'); g.async=true; g.src='https://www.googletagmanager.com/gtm.js?id='+GTM_ID; document.head.appendChild(g);
+    }
+    if (GA_ID) {
+      var s=document.createElement('script'); s.async=true; s.src='https://www.googletagmanager.com/gtag/js?id='+GA_ID; document.head.appendChild(s);
+      gtag('js', new Date()); gtag('config', GA_ID);
+    }
     // Count WhatsApp, phone and email clicks as enquiries
     document.addEventListener('click',function(e){var a=e.target.closest('a,button[type=submit]'); if(!a) return; var h=a.getAttribute('href')||'';
       var m = h.indexOf('wa.me')>-1?'whatsapp':h.indexOf('tel:')===0?'phone':h.indexOf('mailto:')===0?'email':(a.dataset&&a.dataset.via)?('form_'+a.dataset.via):'';
-      if(m) gtag('event','generate_lead',{method:m, page_path:location.pathname});},true);
+      if(m) dataLayer.push({event:'generate_lead', lead_method:m, page_path:location.pathname});},true);
   }
   function get(){ try{return localStorage.getItem(KEY);}catch(e){return null;} }
   function set(v){ try{localStorage.setItem(KEY,v);}catch(e){} }
